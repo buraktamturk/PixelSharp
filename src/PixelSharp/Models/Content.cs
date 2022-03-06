@@ -24,5 +24,5 @@ public record Content
     /// </summary>
     /// <value>Item Price.</value>
     [JsonPropertyName("item_price")]
-    public float? ItemPrice { get; init; }
+    public decimal? ItemPrice { get; init; }
 }
