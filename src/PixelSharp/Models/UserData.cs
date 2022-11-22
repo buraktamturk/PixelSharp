@@ -101,21 +101,21 @@ public record UserData
     /// </summary>
     /// <value>The Facebook click ID value stored in the _fbc browser cookie under your domain. See Managing fbc and fbp Parameters for how to get this value (https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc), or generate this value from a fbclid query parameter.</value>
     [JsonPropertyName("fbc")]
-    public string Fbc { get; init; }
+    public string? Fbc { get; init; }
 
     /// <summary>
     /// The Facebook browser ID value stored in the _fbp browser cookie under your domain. See Managing fbc and fbp Parameters for how to get this value (https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc).
     /// </summary>
     /// <value>The Facebook browser ID value stored in the _fbp browser cookie under your domain. See Managing fbc and fbp Parameters for how to get this value (https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc).</value>
     [JsonPropertyName("fbp")]
-    public string Fbp { get; init; }
+    public string? Fbp { get; init; }
 
     /// <summary>
     /// The subscription ID for the user in this transaction. This is similar to the order ID for an individual product.
     /// </summary>
     /// <value>The subscription ID for the user in this transaction. This is similar to the order ID for an individual product.</value>
     [JsonPropertyName("subscription_id")]
-    public string SubscriptionId { get; init; }
+    public string? SubscriptionId { get; init; }
 
     public UserData With(UserData userData)
     {

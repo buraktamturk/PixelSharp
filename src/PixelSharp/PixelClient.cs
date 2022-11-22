@@ -11,7 +11,7 @@ public sealed class PixelClient : IPixelClient, IDisposable
     {
         this._httpClient = new HttpClient()
         {
-            BaseAddress = new Uri($"https://graph.facebook.com/v8.0/{pixelId}/"),
+            BaseAddress = new Uri($"https://graph.facebook.com/v14.0/{pixelId}/"),
             DefaultRequestHeaders =
             {
                 Authorization = new AuthenticationHeaderValue("Bearer", accessToken)
@@ -31,7 +31,7 @@ public sealed class PixelClient : IPixelClient, IDisposable
 
             var error = await response.Content.ReadFromJsonAsync<FacebookErrorResponse>();
 
-            throw new PixelClientException(error.Error!);
+            throw new PixelClientException(error!.Error);
         }
 
         return (await response.Content.ReadFromJsonAsync<ResponseSuccess>())!;
